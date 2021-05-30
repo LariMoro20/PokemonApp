@@ -15,10 +15,7 @@
           <h1 class="about-title q-ma-none">Sobre a aplicação</h1>
         </div>
         <div class="col-12 col-md-12">
-          <p>{{ text }}</p>
-        </div>
-        <div class="col-12 col-md-8">
-          <p>{{ text2 }}</p>
+          <p class="about-text">{{ text }}</p>
         </div>
         <div class="col-12 col-md-4 q-px-xs">
           <img
@@ -54,9 +51,8 @@ export default {
   },
   data: () => ({
     text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac purus fermentum, maximus eros sed, ultricies enim. Aenean sagittis nibh eros. Curabitur tincidunt ac ligula id porta. Sed ut ligula velit. Praesent a pulvinar erat. Sed id dapibus odio. Aenean quis ullamcorper leo. Donec semper nisi nec molestie laoreet. Duis vestibulum mauris non porttitor vulputate. Nunc id est varius, dignissim magna at, pellentesque urna. Integer cursus sagittis justo, at suscipit lorem rutrum vel. Etiam malesuada arcu a lectus porttitor, eu feugiat purus convallis. Nullam interdum mauris eu metus pharetra, sed mattis massa pretium. Suspendisse euismod velit eget sagittis congue.Integer quis rutrum lectus, at sagittis mi. Sed eget enim fermentum. ",
-    text2:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac purus fermentum, maximus eros sed, ultricies enim. Aenean sagittis nibh eros. Curabitur tincidunt ac ligula id porta. Sed ut ligula velit. Praesent a pulvinar erat. Sed id dapibus odio. Aenean quis ullamcorper leo. Donec semper nisi nec molestie laoreet. Duis vestibulum mauris non porttitor vulputate. Nunc id est varius, dignissim magna at, pellentesque urna. Integer cursus sagittis justo, at suscipit lorem rutrum vel. Etiam malesuada arcu a lectus porttitor, eu feugiat purus convallis. Nullam interdum mauris eu metus pharetra, sed mattis massa pretium. Suspendisse euismod velit eget sagittis congue.Integer quis rutrum lectus, at sagittis mi. Sed eget enim fermentum, varius quam nec, bibendum mi. Sed at ex diam. Vivamus nec sodales libero."
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac purus fermentum, maximus eros sed, ultricies enim. Aenean sagittis nibh eros. Curabitur tincidunt ac ligula id porta. Sed ut ligula velit. Praesent a pulvinar erat. Sed id dapibus odio. Aenean quis ullamcorper leo. Donec semper nisi nec molestie laoreet. Duis vestibulum mauris non porttitor vulputate. Nunc id est varius, dignissim magna at, pellentesque urna. Integer cursus sagittis justo, at suscipit lorem rutrum vel. Etiam malesuada arcu a lectus porttitor, eu feugiat purus convallis. Nullam interdum mauris eu metus pharetra, sed mattis massa pretium. Suspendisse euismod velit eget sagittis congue.Integer quis rutrum lectus, at sagittis mi. Sed eget enim fermentum. '+
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac purus fermentum, maximus eros sed, ultricies enim. Aenean sagittis nibh eros. Curabitur tincidunt ac ligula id porta. Sed ut ligula velit. Praesent a pulvinar erat. Sed id dapibus odio. Aenean quis ullamcorper leo. Donec semper nisi nec molestie laoreet. Duis vestibulum mauris non porttitor vulputate. Nunc id est varius, dignissim magna at, pellentesque urna. Integer cursus sagittis justo, at suscipit lorem rutrum vel. Etiam malesuada arcu a lectus porttitor, eu feugiat purus convallis. Nullam interdum mauris eu metus pharetra, sed mattis massa pretium. Suspendisse euismod velit eget sagittis congue.Integer quis rutrum lectus, at sagittis mi. Sed eget enim fermentum, varius quam nec, bibendum mi. Sed at ex diam. Vivamus nec sodales libero.'
   }),
   mounted() {
     this.actNamePokemon();
@@ -73,6 +69,9 @@ export default {
 }
 .about-title {
   font-size: 2em;
+}
+.about-text{
+  font-weight: 100;
 }
 .about-subtitle {
   font-size: 1em;

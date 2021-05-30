@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-md q-gutter-sm">
-    <h3 class="title-text q-ma-none">{{title}}</h3>
+    <h3 class="title-text q-ma-none" v-if="title!=''">{{title}}</h3>
     <q-editor
     class="full-height"
       v-model="editor"
@@ -44,7 +44,7 @@ export default {
   props: {
     title: {
       type: [String],
-      default: "Insira o texto"
+      default: ''
     }
   },
   data() {

@@ -1,16 +1,19 @@
 <template>
   <div class="q-pa-md q-gutter-sm">
-<h3 class="title-date q-ma-none">{{title}}: <small>{{model}}</small></h3>
+      <!--<h3 class="title-date q-ma-none">{{title}}: <small>{{model}}</small></h3>-->
       <q-date
         class="full-width"
         v-model="model"
+        :events="events"
+        event-color="blue"
         :locale="myLocale"
         mask="DD/MM/YYYY"
       >
+      <p>Eventos:<br> {{ events }}</p>
         <q-btn
           class="full-width"
           color="white"
-          label="Salvar"
+          label="Ver"
           text-color="black"
           @click="setNewDate"
         />
@@ -30,7 +33,8 @@ export default {
   },
   data: () => ({
     model: moment().format("DD/MM/YYYY"),
-    myLocale: {}
+    myLocale: {},
+    events: [ '30/05/2021', '07/06/2021', '06/06/2021' ]
   }),
 
   created() {
@@ -73,7 +77,8 @@ export default {
         months: months.fullName,
         monthsShort: months.fullName.map(item => item.slice(0, 3)),
         days: dayOfWeek.fullName,
-        daysShort: dayOfWeek.fullName.map(item => item.slice(0, 3))
+        daysShort: dayOfWeek.fullName.map(item => item.slice(0, 3)),
+        events: [ '30/05/2021', '07/06/2021', '06/06/2021' ]
       }
       this.myLocale = myLocale
     }
