@@ -6,7 +6,10 @@
           src="https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg"
         />
       </template>
-      <img src="/pokemon-logo.png" class="pokemon_logotipo" />
+      <img
+        src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo.png"
+        class="pokemon_logotipo"
+      />
       <br />
     </q-parallax>
     <div class="row">
@@ -25,35 +28,34 @@
               <q-tab-panel name="30/05/2021">
                 <div class="text-h4 q-mb-md">30/05/2021</div>
                 <p class="q-ma-none q-pa-none">
-                  Descrição do evento exemplo um. Amet consectetur adipisicing elit. Quis
-                  praesentium cumque magnam odio iure quidem, quod illum numquam
-                  possimus obcaecati commodi minima assumenda consectetur culpa
-                  fuga nulla ullam. In, libero.
+                  Descrição do evento exemplo um. Amet consectetur adipisicing
+                  elit. Quis praesentium cumque magnam odio iure quidem, quod
+                  illum numquam possimus obcaecati commodi minima assumenda
+                  consectetur culpa fuga nulla ullam. In, libero.
                 </p>
               </q-tab-panel>
 
               <q-tab-panel name="07/06/2021">
                 <div class="text-h4 q-mb-md">07/06/2021</div>
                 <p>
-                  Descrição do evento exemplo dois. Quod illum numquam
-                  possimus obcaecati commodi minima assumenda consectetur culpa
-                  fuga nulla ullam. In, libero.
+                  Descrição do evento exemplo dois. Quod illum numquam possimus
+                  obcaecati commodi minima assumenda consectetur culpa fuga
+                  nulla ullam. In, libero.
                 </p>
-               
               </q-tab-panel>
 
               <q-tab-panel name="06/06/2021">
                 <div class="text-h4 q-mb-md">06/06/2021</div>
                 <p>
-                  Descrição do evento exemplo tres. Magnam odio iure quidem, quod illum numquam
-                  possimus obcaecati commodi minima assumenda consectetur culpa
-                  fuga nulla ullam. In, libero.
+                  Descrição do evento exemplo tres. Magnam odio iure quidem,
+                  quod illum numquam possimus obcaecati commodi minima assumenda
+                  consectetur culpa fuga nulla ullam. In, libero.
                 </p>
               </q-tab-panel>
             </q-tab-panels>
           </div>
           <div class="col-12 col-md-12">
-            <text-component title='' @newItem="saveEvent" />
+            <text-component title="" @newItem="saveEvent" />
           </div>
         </div>
       </div>
@@ -88,8 +90,7 @@ export default {
     }
   },
   saveEvent(value) {
-    alert(value)
-    
+    alert(value);
   }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-<div>
+  <div>
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -11,7 +11,10 @@
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
         <q-toolbar-title class="text-center">
-          <img src="/pokemon-logo.png" class="pokemon_logotipo" />
+          <img
+            src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo.png"
+            class="pokemon_logotipo"
+          />
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -26,41 +29,65 @@
           Menu
         </q-item-label>
 
-        <q-item color="red-10" clickable  to="/" v-ripple class="text-grey-8 pokemon_menu-item">
+        <q-item
+          color="red-10"
+          clickable
+          to="/"
+          v-ripple
+          class="text-grey-8 pokemon_menu-item"
+        >
           <q-item-section side>
             <q-icon name="home" color="red" />
           </q-item-section>
           <q-item-section>
-              <q-item-label>Inicial</q-item-label>
+            <q-item-label>Inicial</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item color="red-10" clickable   to="/about" v-ripple class="text-grey-8 pokemon_menu-item">
+        <q-item
+          color="red-10"
+          clickable
+          to="/about"
+          v-ripple
+          class="text-grey-8 pokemon_menu-item"
+        >
           <q-item-section side>
             <q-icon name="info" color="red" />
           </q-item-section>
           <q-item-section>
-              <q-item-label>Sobre</q-item-label>
+            <q-item-label>Sobre</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item color="red-10" clickable v-ripple  to="/pokemons" class="text-grey-8 pokemon_menu-item">
+        <q-item
+          color="red-10"
+          clickable
+          v-ripple
+          to="/pokemons"
+          class="text-grey-8 pokemon_menu-item"
+        >
           <q-item-section side>
             <q-icon name="catching_pokemon" color="red" />
           </q-item-section>
           <q-item-section>
-              <q-item-label>Pokemons</q-item-label>
+            <q-item-label>Pokemons</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item color="red-10" clickable v-ripple  to="/notes" class="text-grey-8 pokemon_menu-item">
+        <q-item
+          color="red-10"
+          clickable
+          v-ripple
+          to="/notes"
+          class="text-grey-8 pokemon_menu-item"
+        >
           <q-item-section side>
             <q-icon name="sticky_note_2" color="red" />
           </q-item-section>
           <q-item-section>
-              <q-item-label>Anotações</q-item-label>
+            <q-item-label>Anotações</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
     </q-drawer>
-</div>
+  </div>
 </template>
 <script>
 export default {
@@ -68,7 +95,7 @@ export default {
   data: () => ({
     year: new Date().getFullYear(),
     leftDrawerOpen: false
-  }),
+  })
 };
 </script>
 
@@ -85,7 +112,7 @@ export default {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.2em;
-  font-family: 'Odibee Sans', cursive;
+  font-family: "Odibee Sans", cursive;
 }
 a {
   text-decoration: none;
