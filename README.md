@@ -22,7 +22,7 @@ npm install
 ### Rodar a aplicação:
 
 ```bash
-npm run build
+npm start
 ```
 
 ### Build da aplicação
