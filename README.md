@@ -1,7 +1,7 @@
 # Pokemon App (pokemon-app)
 
 Aplicação SPA desenvolvida em Vue.js utilizando Quasar framework.
-![imagem](https://github.com/LariMoro20/lavis-app/blob/master/image.png)
+![imagem](https://github.com/LariMoro20/PokemonApp/blob/main/appPoke.png)
 Contem:
 
 - Reatividade;
