@@ -1,6 +1,7 @@
 # Pokemon App (pokemon-app)
 
 Aplicação SPA desenvolvida em Vue.js utilizando Quasar framework.
+
 Para visualizar o layout: https://pokemonapp-ivory.vercel.app/
 
 ![imagem](https://github.com/LariMoro20/PokemonApp/blob/main/appPoke.png)
