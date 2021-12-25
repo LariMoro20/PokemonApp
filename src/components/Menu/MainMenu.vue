@@ -57,20 +57,7 @@
             <q-item-label>Sobre</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item
-          color="red-10"
-          clickable
-          v-ripple
-          to="/pokemons"
-          class="text-grey-8 pokemon_menu-item"
-        >
-          <q-item-section side>
-            <q-icon name="catching_pokemon" color="red" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Pokemons</q-item-label>
-          </q-item-section>
-        </q-item>
+
         <q-item
           color="red-10"
           clickable

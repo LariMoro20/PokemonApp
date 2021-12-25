@@ -1,8 +1,8 @@
 <template>
-  <div class="q-pa-md q-gutter-sm">
-    <h3 class="title-text q-ma-none" v-if="title!=''">{{title}}</h3>
+  <div class="q-px-md q-gutter-sm">
+    <h3 class="title-text q-ma-none" v-if="title != ''">{{ title }}</h3>
     <q-editor
-    class="full-height"
+      class="full-height"
       v-model="editor"
       :definitions="{
         save: {
@@ -44,7 +44,7 @@ export default {
   props: {
     title: {
       type: [String],
-      default: ''
+      default: ""
     }
   },
   data() {
@@ -54,13 +54,13 @@ export default {
   },
   methods: {
     saveWork() {
-      this.$emit("newItem", this.editor); 
+      this.$emit("newItem", this.editor);
     }
   }
 };
 </script>
 <style scoped>
-.title-text{
+.title-text {
   font-size: 2em;
   line-height: 3rem;
 }

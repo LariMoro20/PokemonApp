@@ -10,45 +10,31 @@
       <br />
     </q-parallax>
     <div class="row">
-      <div class="col-12 col-md-12">
+      <div class="col-12 col-md-8">
         <div class="row">
-          <div class="col-12 col-md-12 q-px-md q-pt-sm">
-            <small>
-              Digite alguma coisa e clique em "Salvar". A anotação ficará salva
-              somente para você localmente
-            </small>
-          </div>
           <div class="col-12 col-md-12">
             <text-component @newItem="saveAnotation" />
           </div>
-
           <div class="col-12 col-md-12 q-pa-md">
-            <q-list bordered padding class="rounded-borders full-width">
-              <q-item-label header>Suas anotações</q-item-label>
+            <q-list
+              bordered
+              padding
+              class="rounded-borders full-width"
+            >
+              <q-item-label header>Anotações</q-item-label>
 
-              <q-item
-                v-ripple
-                v-for="(anotation, ikey) in anotations"
-                :key="ikey"
-              >
+              <q-item v-ripple v-for="(anotation, ikey) in anotations" :key="ikey">
                 <q-item-section avatar top>
                   <q-avatar icon="label" color="green" text-color="white" />
                 </q-item-section>
 
                 <q-item-section>
-                  <q-item-label
-                    lines="1"
-                    v-html="anotation.text"
-                  ></q-item-label>
+                  <q-item-label lines="1" v-html="anotation.text"></q-item-label>
                 </q-item-section>
 
                 <q-item-section side>
-                  <q-btn
-                    round
-                    color="primary"
-                    icon="delete"
-                    @click="removeAnotation(anotation.id)"
-                  />
+                  <q-btn round color="primary" icon="delete" @click="removeAnotation(anotation.id)"/>
+
                 </q-item-section>
               </q-item>
             </q-list>
@@ -67,26 +53,21 @@ export default {
     TextComponent
   },
   computed: {
-    ...mapState("anotations", ["anotations"])
+    ...mapState("anotations", ["anotations"]),
   },
   name: "PageAnotations",
 
   mounted() {
-    this.actGetAnotations();
+    this.actGetAnotations()
   },
   methods: {
-    ...mapActions("anotations", [
-      "actGetAnotations",
-      "actSetAnotations",
-      "actRemoveAnotations"
-    ]),
-    removeAnotation(value) {
-      this.$dialog
-        .confirm("Apagar?", "Tem certeza que deseja deletar a anotação?")
-        .onOk(async () => {
-          this.actRemoveAnotations(value);
-          this.$notify.success("Apagado com sucesso");
-        });
+    ...mapActions("anotations", ["actGetAnotations", "actSetAnotations","actRemoveAnotations"]),
+    removeAnotation(value){
+      this.$dialog.confirm('Apagar?','Tem certeza que deseja deletar a anotação?').onOk(async () =>{
+        this.actRemoveAnotations(value)
+        this.$notify.success("Apagado com sucesso")
+      })
+      
     },
     saveAnotation(value) {
       this.actSetAnotations(value);
@@ -111,7 +92,7 @@ export default {
   font-size: 2em;
   line-height: 3rem;
 }
-.header-text {
-  color: white;
+.header-text{
+    color: white;
 }
 </style>

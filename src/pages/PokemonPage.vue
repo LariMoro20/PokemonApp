@@ -1,6 +1,7 @@
 <template>
   <q-page class="flex flex-center">
-    <div class="row flex-center">
+    <Header />
+    <div class="row flex-center q-pt-md">
       <q-card class="my-card">
         <div class="text-center">
           <img class="pokemon_card-image q-pa-md" :src="currentPokemon.image" />
@@ -42,14 +43,24 @@
           </div>
         </q-card-section>
       </q-card>
+      <div class="col-12 col-md-12 q-pa-md  text-center">
+        <p>
+          Esta aplicação utiliza a api extena
+          <a href="https://pokeapi.co/" target="_blank">https://pokeapi.co/</a>.
+          Por este motivo, pode apresentar instabilidade
+        </p>
+      </div>
     </div>
   </q-page>
 </template>
 
 <script>
+import Header from "src/components/Parts/Header.vue";
 import api from "../services/api";
 export default {
+  components: { Header },
   name: "PokemonPage",
+  components: { Header },
   data: () => ({
     currentPokemon: {
       name: "",
