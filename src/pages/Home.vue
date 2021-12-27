@@ -1,17 +1,6 @@
 <template>
   <q-page class=" flex-center">
-    <q-parallax :height="150" :speed="0.5">
-      <template v-slot:media>
-        <img
-          src="https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg"
-        />
-      </template>
-      <img
-        src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo.png"
-        class="pokemon_logotipo"
-      />
-      <br />
-    </q-parallax>
+    <Header />
     <div class="row">
       <div class="col-12 col-md-4">
         <date @newDate="changeDate" />
@@ -66,12 +55,13 @@
 <script>
 import moment from "moment-timezone";
 import TextComponent from "src/components/Forms/TextComponent.vue";
-
+import Header from "src/components/Parts/Header.vue";
 import Date from "src/components/Forms/Date.vue";
 export default {
   components: {
     Date,
-    TextComponent
+    TextComponent,
+    Header
   },
   name: "PageHome",
   data: () => ({

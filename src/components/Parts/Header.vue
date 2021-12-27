@@ -1,9 +1,7 @@
 <template>
   <q-parallax :height="150" :speed="0.5">
     <template v-slot:media>
-      <img
-        src="https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg"
-      />
+      <img src="https://pokemonapp-ivory.vercel.app/logo.png" />
     </template>
     <img
       src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo.png"
