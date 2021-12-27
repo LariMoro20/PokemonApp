@@ -1,10 +1,10 @@
 <template>
   <q-parallax :height="150" :speed="0.5">
     <template v-slot:media>
-      <img src="https://pokemonapp-ivory.vercel.app/logo.png" />
+      <img src="https://pokemonapp-ivory.vercel.app/header-bkg.jpg" />
     </template>
     <img
-      src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo.png"
+      src="https://pokemonapp-ivory.vercel.app/logo.png"
       class="pokemon_logotipo"
     />
     <br />
