@@ -34,7 +34,7 @@
       >
         <div class="col-12 col-md-12 text-white text-center text-h6 q-pb-none">Pokemon encontrado</div>
 
-        <div class="col-md-4 col-12 q-px-lg q-py-sm">
+        <div class="col-md-3 col-12 q-px-lg q-py-sm">
           <Item :url="currentPokemon_url" />
         </div>
          <div class="col-12 col-md-12 text-white text-center text-h6"><hr/></div>
@@ -42,7 +42,7 @@
       </div>
       <div class="row flex-center">
         <div
-          class="col-md-4 col-12 q-pa-lg"
+          class="col-md-3 col-12 q-pa-lg"
           v-for="(pokemon, ikey) in pokemons"
           :key="ikey"
         >
