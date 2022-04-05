@@ -20,7 +20,7 @@
         />
       </div>
     </div>
-    
+
     <div class="container q-pa-lg">
       <div v-if="currentPokemon_url" class="pokemon__search-result q-pa-sm">
         <div class="row flex-center ">
@@ -30,14 +30,18 @@
             Pokemon encontrado
           </div>
         </div>
-        <div class="flex flex-center ">
-          <div class="col-4 q-pa-lg">
-            <Item :url="currentPokemon_url"  />
+        <div class="row flex-center ">
+          <div class="col-md-3 col-lg-3 col-12 q-px-lg q-py-sm">
+            <Item :url="currentPokemon_url" />
           </div>
         </div>
       </div>
-      <div class="flex flex-center">
-        <div class="q-pa-lg" v-for="(pokemon, ikey) in pokemons" :key="ikey">
+      <div class="row flex-center">
+        <div
+          class="col-md-3 col-lg-3 col-12 q-px-lg q-py-sm item__poke"
+          v-for="(pokemon, ikey) in pokemons"
+          :key="ikey"
+        >
           <Item :url="pokemon.url" />
         </div>
         <div class="col-12 col-md-12 q-pa-md  text-center">
@@ -121,7 +125,10 @@ export default {
 };
 </script>
 <style scoped>
-.pokemon__search-result{
+.pokemon__search-result {
   background-color: #afafaf54;
+}
+.item__poke{
+  width: 300px;
 }
 </style>
