@@ -218,7 +218,7 @@ export default {
   border-radius: 10px;
 }
 .pokemon__types-item-type {
-  font-size: 2em;
+  font-size: 1.3em;
   padding: 10px;
    margin: 10px;
   color: black;
