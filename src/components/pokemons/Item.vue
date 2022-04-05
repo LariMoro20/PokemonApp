@@ -31,7 +31,7 @@
           </q-card-section>
 
           <q-card-section class="q-pt-none scroll full-height flex items-center justify-center" style="max-height: 70vh">
-            <div class="itemtrst full-height">
+            <div class="itemtrst full-width">
             <div class="row">
               <div class="col-md-12 text-center full-width ">
                 <div class="pokemon__modal-image">
@@ -202,8 +202,8 @@ export default {
   background-size: cover;
   top: 50%;
   left: 50%;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   max-width: 100%;
 }
 .pokemon__modal-image::before {
