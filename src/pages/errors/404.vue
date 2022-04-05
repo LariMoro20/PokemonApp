@@ -6,7 +6,7 @@
       <h1 class="error_content-title">404</h1>
       <h4 class="error_content-text">Ops, esta página não existe..</h4>
       <router-link class="menu-link btn error_content-btn" to="/"
-        >Página Inicial</router-link
+        >Voltar para a Página Inicial</router-link
       >
     </div>
   </div>
@@ -16,6 +16,7 @@
 export default {};
 </script>
 <style scoped>
+
 .error_content {
   /* background-image: url(https://www.egeniq.nl/sites/default/files/2020-06/frontend_webdeveloper.jpg);*/
   background-color: black;
