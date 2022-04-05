@@ -106,7 +106,7 @@ export default {
     },
     setCurrentPokemon() {
       this.currentPokemon_url =
-        "https://pokeapi.co/api/v2/pokemon/" + this.current_id;
+        "https://pokeapi.co/api/v2/pokemon/" + this.current_id.toLowerCase();
     },
 
     goBack() {
