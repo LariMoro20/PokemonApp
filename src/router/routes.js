@@ -1,3 +1,5 @@
+import Error404 from '../pages/errors/404.vue'
+
 const routes = [{
     path: '/',
     component: () =>
@@ -7,7 +9,13 @@ const routes = [{
         component: () =>
             import('src/pages/PokemonPage.vue')
     },
+   
     ]
-}]
+},
+{ 
+    path: '/:catchAll(.*)', 
+    component: Error404,
+    name: 'NotFound'
+  }]
 
 export default routes
