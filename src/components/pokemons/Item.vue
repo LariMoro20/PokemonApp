@@ -30,7 +30,8 @@
             </div>
           </q-card-section>
 
-          <q-card-section class="q-pt-none scroll" style="max-height: 100vh">
+          <q-card-section class="q-pt-none scroll full-height flex items-center justify-center" style="max-height: 70vh">
+            <div class="itemtrst full-height">
             <div class="row">
               <div class="col-md-12 text-center full-width ">
                 <div class="pokemon__modal-image">
@@ -104,6 +105,7 @@
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </q-card-section>
 
