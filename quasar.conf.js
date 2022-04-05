@@ -82,7 +82,7 @@ module.exports = function( /* ctx */ ) {
         // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
         framework: {
             iconSet: 'material-icons', // Quasar icon set
-            lang: 'en-us', // Quasar language pack
+            lang: 'pt-br', // Quasar language pack
             config: {},
 
             // Possible values for "importStrategy":
@@ -111,7 +111,7 @@ module.exports = function( /* ctx */ ) {
 
         // https://v1.quasar.dev/quasar-cli/developing-ssr/configuring-ssr
         ssr: {
-            pwa: false
+            pwa: true
         },
 
         // https://v1.quasar.dev/quasar-cli/developing-pwa/configuring-pwa
@@ -124,8 +124,8 @@ module.exports = function( /* ctx */ ) {
                 description: `A Quasar Framework app`,
                 display: 'standalone',
                 orientation: 'portrait',
-                background_color: '#ffffff',
-                theme_color: '#027be3',
+                background_color: '#C10015',
+                theme_color: '#b71c1c',
                 icons: [{
                         src: 'icons/icon-128x128.png',
                         sizes: '128x128',
