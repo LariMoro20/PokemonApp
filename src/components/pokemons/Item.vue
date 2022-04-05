@@ -19,7 +19,13 @@
         />
       </div>
 
-      <q-dialog class="bg-grey-10 text-white" v-model="openDialog">
+      <q-dialog
+        class="bg-grey-10 text-white q-pa-none"
+        v-model="openDialog"
+        full-width
+        :maximized="maximizedToggle"
+        persistent
+      >
         <q-card
           class="bg-grey-10 text-white full-height"
           style="width:100%; max-width: 100vw;"
@@ -30,82 +36,85 @@
             </div>
           </q-card-section>
 
-          <q-card-section class="q-pt-none scroll full-height flex items-center justify-center" style="max-height: 70vh">
+          <q-card-section
+            class="q-pt-none scroll full-height flex items-center justify-center"
+            style="max-height: 76vh"
+          >
             <div class="itemtrst full-width">
-            <div class="row">
-              <div class="col-md-12 text-center full-width ">
-                <div class="pokemon__modal-image">
-                  <img
-                    class="pokemon__modal-image-img q-pa-md"
-                    :src="currentPokemon.image"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 full-width">
-                <div class="col-md-12 full-width text-center text-h6">
-                  Detalhes
-                </div>
-                <div
-                  class="row flex  q-pa-md bg-black text-white flex-center justify-around"
-                >
-                  <div>
-                    <span
-                      class="pokemon__types-item pokemon__types-item-type bg-primary text-white text-capitalize"
-                      v-for="(type, ikey) in currentPokemon.types"
-                      :key="ikey"
-                    >
-                      {{ type.type.name }}
-                    </span>
+              <div class="row">
+                <div class="col-md-12 text-center full-width ">
+                  <div class="pokemon__modal-image">
+                    <img
+                      class="pokemon__modal-image-img q-pa-md"
+                      :src="currentPokemon.image"
+                    />
                   </div>
                 </div>
               </div>
-              <div class="col-md-12 full-width">
-                <div
-                  class="row flex pokemon__skills q-pa-sm bg-black text-white flex-center justify-around "
-                >
-                  <div class="pokemon__skills-item text-capitalize">
-                    Habilidade:
-                    <span
-                      class="pokemon__types-item text-capitalize"
-                      v-for="(hability, ikey) in currentPokemon.abilities"
-                      :key="ikey"
-                    >
-                      {{ hability.ability.name }}
-                    </span>
+              <div class="row">
+                <div class="col-md-12 full-width">
+                  <div class="col-md-12 full-width text-center text-h6">
+                    Detalhes
                   </div>
-                  <div class="pokemon__skills-item">
-                    Altura: {{ currentPokemon.height }} m
-                  </div>
-                  <div class="pokemon__skills-item">
-                    Peso: {{ currentPokemon.height }} kg
+                  <div
+                    class="row flex  q-pa-md bg-black text-white flex-center justify-around"
+                  >
+                    <div>
+                      <span
+                        class="pokemon__types-item pokemon__types-item-type bg-primary text-white text-capitalize"
+                        v-for="(type, ikey) in currentPokemon.types"
+                        :key="ikey"
+                      >
+                        {{ type.type.name }}
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <div
-                  class="row flex pokemon__skills q-pa-sm bg-black text-white flex-center justify-between"
-                >
-                  <div class="pokemon__skills-item">
-                    HP: {{ currentPokemon.hp }}
+                <div class="col-md-12 full-width">
+                  <div
+                    class="row flex pokemon__skills q-pa-sm bg-black text-white flex-center justify-around "
+                  >
+                    <div class="pokemon__skills-item text-capitalize">
+                      Habilidade:
+                      <span
+                        class="pokemon__types-item text-capitalize"
+                        v-for="(hability, ikey) in currentPokemon.abilities"
+                        :key="ikey"
+                      >
+                        {{ hability.ability.name }}
+                      </span>
+                    </div>
+                    <div class="pokemon__skills-item">
+                      Altura: {{ currentPokemon.height }} m
+                    </div>
+                    <div class="pokemon__skills-item">
+                      Peso: {{ currentPokemon.height }} kg
+                    </div>
                   </div>
-                  <div class="pokemon__skills-item">
-                    Ataque: {{ currentPokemon.attack }}
-                  </div>
-                  <div class="pokemon__skills-item">
-                    Defesa: {{ currentPokemon.defense }}
-                  </div>
-                  <div class="pokemon__skills-item">
-                    Ataque esp.: {{ currentPokemon.special_attack }}
-                  </div>
-                  <div class="pokemon__skills-item">
-                    Defesa esp.: {{ currentPokemon.special_defense }}
-                  </div>
-                  <div class="pokemon__skills-item">
-                    Velocidade: {{ currentPokemon.speed }}
+                  <div
+                    class="row flex pokemon__skills q-pa-sm bg-black text-white flex-center justify-between"
+                  >
+                    <div class="pokemon__skills-item">
+                      HP: {{ currentPokemon.hp }}
+                    </div>
+                    <div class="pokemon__skills-item">
+                      Ataque: {{ currentPokemon.attack }}
+                    </div>
+                    <div class="pokemon__skills-item">
+                      Defesa: {{ currentPokemon.defense }}
+                    </div>
+                    <div class="pokemon__skills-item">
+                      Ataque esp.: {{ currentPokemon.special_attack }}
+                    </div>
+                    <div class="pokemon__skills-item">
+                      Defesa esp.: {{ currentPokemon.special_defense }}
+                    </div>
+                    <div class="pokemon__skills-item">
+                      Velocidade: {{ currentPokemon.speed }}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             </div>
           </q-card-section>
 
@@ -133,6 +142,7 @@ export default {
   },
   data: () => ({
     openDialog: false,
+    maximizedToggle: true,
     currentPokemon: {
       id: "",
       name: "",
@@ -220,7 +230,7 @@ export default {
 .pokemon__types-item-type {
   font-size: 1.3rem;
   padding: 10px;
-   margin: 10px;
+  margin: 10px;
   color: black;
 }
 .pokemon__card-image::before {
