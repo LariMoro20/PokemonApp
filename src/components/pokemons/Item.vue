@@ -105,6 +105,11 @@
                     <div class="pokemon__skills-item">
                       Peso: {{ currentPokemon.height }} kg
                     </div>
+                    <div class="pokemon__skills-item">
+                      Forma: {{ currentPokemon.shape.name }}
+                    </div>
+
+                    
                   </div>
                   <div
                     class="row flex pokemon__skills q-pa-sm bg-black text-white flex-center justify-between"
@@ -204,7 +209,6 @@ export default {
             response.data.stats[4].base_stat;
           this.currentPokemon.speed = response.data.stats[5].base_stat;
           this.currentPokemon.species_url = response.data.species.url;
-          //this.getPokeSpecie()
         })
         .catch(() => {
           this.$q.notify({
@@ -217,9 +221,9 @@ export default {
     async getPokeSpecie(url) {
       await api.get(url).then(response => {
         this.currentPokemon.egg_groups = response.data.egg_groups;
+         this.currentPokemon.shape = response.data.shape;
         this.currentPokemon.flavor_text_entries =
           response.data.flavor_text_entries;
-        console.log(this.currentPokemon);
       });
     }
   }
