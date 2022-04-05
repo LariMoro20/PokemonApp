@@ -2,7 +2,7 @@
   <q-page class="bg-black">
     <Header />
     <div class="row q-pt-md q-pa-lg bg-red-10 full-width">
-      <div class="col-11 bg-white q-pa-sm">
+      <div class="col-11 bg-white q-px-sm">
         <q-input
           input-style="background:white"
           dense
