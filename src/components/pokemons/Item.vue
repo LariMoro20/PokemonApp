@@ -45,7 +45,7 @@
             <div class="row">
               <div class="col-md-12 full-width">
                 <div class="col-md-12 full-width text-center text-h6">
-                  Tipos
+                  Detalhes
                 </div>
                 <div
                   class="row flex  q-pa-md bg-black text-white flex-center justify-around"
@@ -95,10 +95,10 @@
                     Defesa: {{ currentPokemon.defense }}
                   </div>
                   <div class="pokemon__skills-item">
-                    Ataque especial: {{ currentPokemon.special_attack }}
+                    Ataque esp.: {{ currentPokemon.special_attack }}
                   </div>
                   <div class="pokemon__skills-item">
-                    Defesa especial: {{ currentPokemon.special_defense }}
+                    Defesa esp.: {{ currentPokemon.special_defense }}
                   </div>
                   <div class="pokemon__skills-item">
                     Velocidade: {{ currentPokemon.speed }}
