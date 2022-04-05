@@ -20,32 +20,24 @@
         />
       </div>
     </div>
-    <div class="col-12 col-md-12 text-white text-center">
-      <small>
-        Esta aplicação utiliza a api extena
-        <a href="https://pokeapi.co/" target="_blank">https://pokeapi.co/</a>.
-        Por este motivo, pode apresentar instabilidade
-      </small>
-    </div>
+    
     <div class="container q-pa-lg">
-      <div
-        class="row flex-center pokemon__search-result"
-        v-if="currentPokemon_url"
-      >
-        <div class="col-12 col-md-12 text-white text-center text-h6 q-pb-none">Pokemon encontrado</div>
-
-        <div class="col-md-3 col-12 q-px-lg q-py-sm">
-          <Item :url="currentPokemon_url" />
+      <div v-if="currentPokemon_url" class="pokemon__search-result q-pa-sm">
+        <div class="row flex-center ">
+          <div
+            class="col-12 col-md-12 text-white text-center text-h6 q-pb-none"
+          >
+            Pokemon encontrado
+          </div>
         </div>
-         <div class="col-12 col-md-12 text-white text-center text-h6"><hr/></div>
-
+        <div class="flex flex-center ">
+          <div class="col-4 q-pa-lg">
+            <Item :url="currentPokemon_url"  />
+          </div>
+        </div>
       </div>
-      <div class="row flex-center">
-        <div
-          class="col-md-3 col-12 q-pa-lg"
-          v-for="(pokemon, ikey) in pokemons"
-          :key="ikey"
-        >
+      <div class="flex flex-center">
+        <div class="q-pa-lg" v-for="(pokemon, ikey) in pokemons" :key="ikey">
           <Item :url="pokemon.url" />
         </div>
         <div class="col-12 col-md-12 q-pa-md  text-center">
@@ -122,10 +114,14 @@ export default {
       await api.get(this.nextUrl).then(res => {
         this.nextUrl = res.data.next;
         this.pokemons.push(...res.data.results);
-        console.log("nextUrl", this.pokemons);
         this.hideLoading();
       });
     }
   }
 };
 </script>
+<style scoped>
+.pokemon__search-result{
+  background-color: #afafaf54;
+}
+</style>

@@ -11,6 +11,7 @@
       class="pokemon_logotipo"
       alt="pokemon logo"
     />
+    
     <br />
   </q-parallax>
 </template>

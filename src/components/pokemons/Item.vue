@@ -6,7 +6,7 @@
       </div>
     </div>
     <div
-      class="text-center pokemon__card-image flex items-center justify-center q-pa-md"
+      class="text-center pokemon__card-image flex items-center justify-center q-pa-lg"
     >
       <img class="pokemon__card-image-img" :src="currentPokemon.image" />
     </div>
