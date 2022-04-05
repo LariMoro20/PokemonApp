@@ -1,24 +1,28 @@
 <template>
   <q-page class="bg-black">
     <Header />
-    <div class="row q-pt-md q-pa-lg bg-red-10 full-width">
-      <div class="col-11 bg-white q-px-sm">
+    <div class="row q-pt-md q-pa-lg bg-red-10 full-width flex flex-center">
+      <div class="col-md-5 col-10  ">
         <q-input
-          input-style="background:white"
           dense
+          color="white"
+          label-color="black"
+          borderless
+          bg-color="white"
+          rounded outlined 
           v-model="current_id"
-          aria-placeholder=""
-          label="Pesquisar o pokemon (digite o nome ou id)"
-        />
-      </div>
-      <div class="col-1">
-        <q-btn
-          color="primary"
-          label="GO!"
+          placeholder="Pesquisar o pokemon (digite o nome ou id)"
+        >
+         <template v-slot:after>
+         <q-btn
+          label="Procurar"
           @click="setCurrentPokemon"
-          class="full-height full-width"
+          class="full-height full-width text-black bg-secondary"
         />
+        </template>
+        </q-input>
       </div>
+  
     </div>
 
     <div class="container q-pa-lg">
