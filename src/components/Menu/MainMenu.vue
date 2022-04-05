@@ -22,7 +22,7 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
-      content-class="bg-grey-1"
+      content-class="bg-black"
     >
       <q-list>
         <q-item-label color="red-10" header class="pokemon_menu-header">
@@ -34,7 +34,7 @@
           clickable
           to="/"
           v-ripple
-          class="text-grey-8 pokemon_menu-item"
+          class="text-white pokemon_menu-item"
         >
           <q-item-section side>
             <q-icon name="home" color="red" />
@@ -48,7 +48,7 @@
           clickable
           to="/about"
           v-ripple
-          class="text-grey-8 pokemon_menu-item"
+          class="text-white pokemon_menu-item"
         >
           <q-item-section side>
             <q-icon name="info" color="red" />
@@ -63,7 +63,7 @@
           clickable
           v-ripple
           to="/notes"
-          class="text-grey-8 pokemon_menu-item"
+          class="text-white pokemon_menu-item"
         >
           <q-item-section side>
             <q-icon name="sticky_note_2" color="red" />

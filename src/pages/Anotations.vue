@@ -25,6 +25,10 @@
           <div class="col-12 col-md-12 q-pa-md">
             <q-list bordered padding class="rounded-borders full-width">
               <q-item-label header>Suas anotações</q-item-label>
+              <div  class="col-12 col-md-12 q-px-md q-pt-sm" v-if="!anotations.length" padding>
+                
+                Não há anotações :(
+              </div>
 
               <q-item
                 v-ripple

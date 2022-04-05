@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-pull-to-refresh @refresh="refresh">
-      <main-menu />
+      
       <q-page-container>
         <router-view />
         <Footer />
@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import MainMenu from "src/components/Menu/MainMenu.vue";
+//import MainMenu from "src/components/Menu/MainMenu.vue";
 import Footer from "src/components/Parts/Footer.vue";
 export default {
   name: "MainLayout",
   components: {
-    MainMenu,
+   // MainMenu,
     Footer
   },
   data: () => ({
@@ -33,3 +33,9 @@ export default {
   }
 };
 </script>
+<style>
+* {
+  font-family: "Inter", sans-serif;
+}
+
+</style>
