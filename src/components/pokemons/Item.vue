@@ -11,7 +11,6 @@
       <img class="pokemon__card-image-img" :src="currentPokemon.image" />
     </div>
     <q-card-section class="text-center ">
-      
       <div class="col-md-12 items-center justify-center flex">
         <q-btn
           label="Detalhes"
@@ -67,7 +66,8 @@
                 >
                   <div class="pokemon__skills-item text-capitalize">
                     Habilidade:
-                    <span class="pokemon__types-item text-capitalize"
+                    <span
+                      class="pokemon__types-item text-capitalize"
                       v-for="(hability, ikey) in currentPokemon.abilities"
                       :key="ikey"
                     >
@@ -139,10 +139,15 @@ export default {
     }
   }),
   created() {
-    this.getPokeById();
+    this.getPokeByURL();
+  },
+  watch: {
+    url: function() {
+      this.getPokeByURL()
+    }
   },
   methods: {
-    getPokeById() {
+    getPokeByURL() {
       api.get(this.url).then(response => {
         this.currentPokemon.name = response.data.name;
         this.currentPokemon.types = response.data.types;
@@ -222,10 +227,9 @@ export default {
 .pokemon__skills-item {
   padding: 7px;
 }
-.pokemon__card-number{
-    background-color: #921616;
-color: white;
-border-radius: 0;
-
+.pokemon__card-number {
+  background-color: #921616;
+  color: white;
+  border-radius: 0;
 }
 </style>

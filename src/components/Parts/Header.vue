@@ -1,5 +1,5 @@
 <template>
-  <q-parallax :height="150" :speed="0.5">
+  <q-parallax :height="180" :speed="0.5">
     <template v-slot:media>
       <img
         src="https://pokemonapp-ivory.vercel.app/header-bkg.jpg"

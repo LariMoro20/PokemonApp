@@ -6,43 +6,57 @@
         <q-input
           input-style="background:white"
           dense
-          label="Pesquisar o pokemon"
+          v-model="current_id"
+          aria-placeholder=""
+          label="Pesquisar o pokemon (digite o nome ou id)"
         />
       </div>
       <div class="col-1">
         <q-btn
           color="primary"
           label="GO!"
+          @click="setCurrentPokemon"
           class="full-height full-width"
         />
       </div>
     </div>
-     <div class="col-12 col-md-12 text-white text-center">
-        <small>
-          Esta aplicação utiliza a api extena
-          <a href="https://pokeapi.co/" target="_blank">https://pokeapi.co/</a>.
-          Por este motivo, pode apresentar instabilidade
-        </small>
-      </div>
+    <div class="col-12 col-md-12 text-white text-center">
+      <small>
+        Esta aplicação utiliza a api extena
+        <a href="https://pokeapi.co/" target="_blank">https://pokeapi.co/</a>.
+        Por este motivo, pode apresentar instabilidade
+      </small>
+    </div>
     <div class="container q-pa-lg">
-    <div class="row flex-center">
       <div
-        class="col-md-4 col-12 q-pa-lg"
-        v-for="(pokemon, ikey) in pokemons"
-        :key="ikey"
+        class="row flex-center pokemon__search-result"
+        v-if="currentPokemon_url"
       >
-      <Item :url="pokemon.url"/>
+        <div class="col-12 col-md-12 text-white text-center text-h6 q-pb-none">Pokemon encontrado</div>
+
+        <div class="col-md-4 col-12 q-px-lg q-py-sm">
+          <Item :url="currentPokemon_url" />
+        </div>
+         <div class="col-12 col-md-12 text-white text-center text-h6"><hr/></div>
+
       </div>
+      <div class="row flex-center">
+        <div
+          class="col-md-4 col-12 q-pa-lg"
+          v-for="(pokemon, ikey) in pokemons"
+          :key="ikey"
+        >
+          <Item :url="pokemon.url" />
+        </div>
         <div class="col-12 col-md-12 q-pa-md  text-center">
           <q-btn
-          color="primary"
-          label="Carregar mais.."
-          class="col-4"
-          @click="getAPI()"
-        />
+            color="primary"
+            label="Carregar mais.."
+            class="col-4"
+            @click="getAPI()"
+          />
         </div>
-     
-    </div>
+      </div>
     </div>
   </q-page>
 </template>
@@ -55,28 +69,20 @@ import api from "../services/api";
 export default {
   components: { Header },
   name: "PokemonPage",
-  components: { Header,Item },
+  components: { Header, Item },
   data: () => ({
-    currentPokemon: {
-      name: "",
-      image: "",
-      base_experience: "",
-      hability: {},
-      id: 1
-    },
+    currentPokemon_url: "",
+    current_id: "",
     pokemons: [],
     pokemonsList: [],
-    nextUrl: '/pokemon/'
+    nextUrl: "/pokemon/"
   }),
 
-  created() {
-    
-  },
-  async mounted(){
-  await this.getAPI();
+  created() {},
+  async mounted() {
+    await this.getAPI();
   },
   methods: {
-
     triggerPositive() {
       this.$q.notify({
         type: "positive",
@@ -98,6 +104,10 @@ export default {
     hideLoading() {
       this.$q.loading.hide();
     },
+    setCurrentPokemon() {
+      this.currentPokemon_url =
+        "https://pokeapi.co/api/v2/pokemon/" + this.current_id;
+    },
 
     goBack() {
       this.currentPokemon.id = this.currentPokemon.id - 1;
@@ -110,9 +120,9 @@ export default {
     async getAPI() {
       this.showLoading();
       await api.get(this.nextUrl).then(res => {
-        this.nextUrl= res.data.next
-        this.pokemons.push(...res.data.results)
-        console.log('nextUrl',this.pokemons)
+        this.nextUrl = res.data.next;
+        this.pokemons.push(...res.data.results);
+        console.log("nextUrl", this.pokemons);
         this.hideLoading();
       });
     }
