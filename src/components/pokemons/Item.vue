@@ -22,7 +22,7 @@
       <q-dialog class="bg-grey-10 text-white" v-model="openDialog">
         <q-card
           class="bg-grey-10 text-white full-height"
-          style="width:800px; max-width: 100vw;"
+          style="width:100%; max-width: 100vw;"
         >
           <q-card-section class="text-center">
             <div class="text-h6 text-capitalize">
@@ -236,7 +236,7 @@ export default {
 }
 .pokemon__skills-item {
   padding: 7px;
-  font-size: 20px;
+  font-size: 17px;
 }
 .pokemon__card-number {
   background-color: #921616;
