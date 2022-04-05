@@ -48,11 +48,11 @@
                   Tipos
                 </div>
                 <div
-                  class="row flex pokemon__skills q-pa-sm bg-black text-white flex-center justify-around"
+                  class="row flex  q-pa-md bg-black text-white flex-center justify-around"
                 >
                   <div>
                     <span
-                      class="pokemon__types-item text-capitalize"
+                      class="pokemon__types-item pokemon__types-item-type  text-capitalize"
                       v-for="(type, ikey) in currentPokemon.types"
                       :key="ikey"
                     >
@@ -216,6 +216,11 @@ export default {
   padding: 5px;
   margin: 5px;
   border-radius: 10px;
+}
+.pokemon__types-item-type {
+  font-size: 2em;
+  padding: 10px;
+   margin: 10px;
 }
 .pokemon__card-image::before {
   content: "";
