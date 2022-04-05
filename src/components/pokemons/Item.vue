@@ -67,7 +67,7 @@
                 >
                   <div class="pokemon__skills-item text-capitalize">
                     Habilidade:
-                    <span
+                    <span class="pokemon__types-item text-capitalize"
                       v-for="(hability, ikey) in currentPokemon.abilities"
                       :key="ikey"
                     >
