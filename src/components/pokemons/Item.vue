@@ -190,8 +190,8 @@ export default {
   background-size: cover;
   top: 50%;
   left: 50%;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   max-width: 100%;
 }
 .pokemon__modal-image::before {
