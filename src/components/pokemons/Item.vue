@@ -52,7 +52,7 @@
                 >
                   <div>
                     <span
-                      class="pokemon__types-item pokemon__types-item-type  text-capitalize"
+                      class="pokemon__types-item pokemon__types-item-type bg-primary text-white text-capitalize"
                       v-for="(type, ikey) in currentPokemon.types"
                       :key="ikey"
                     >
@@ -221,6 +221,7 @@ export default {
   font-size: 2em;
   padding: 10px;
    margin: 10px;
+  color: black;
 }
 .pokemon__card-image::before {
   content: "";
