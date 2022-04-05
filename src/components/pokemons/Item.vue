@@ -200,8 +200,8 @@ export default {
   background-size: cover;
   top: 50%;
   left: 50%;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   max-width: 100%;
 }
 .pokemon__modal-image::before {
@@ -236,6 +236,7 @@ export default {
 }
 .pokemon__skills-item {
   padding: 7px;
+  font-size: 20px;
 }
 .pokemon__card-number {
   background-color: #921616;
