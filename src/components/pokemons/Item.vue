@@ -143,31 +143,41 @@ export default {
   },
   watch: {
     url: function() {
-      this.getPokeByURL()
+      this.getPokeByURL();
     }
   },
   methods: {
     getPokeByURL() {
-      api.get(this.url).then(response => {
-        this.currentPokemon.name = response.data.name;
-        this.currentPokemon.types = response.data.types;
-        this.currentPokemon.id = response.data.id;
-        this.currentPokemon.abilities = response.data.abilities;
-        this.currentPokemon.height = response.data.height / 10;
-        this.currentPokemon.weight = response.data.weight / 10;
-        this.currentPokemon.base_experience = response.data.base_experience;
-        this.currentPokemon.image =
-          response.data.sprites.other.dream_world.front_default != null
-            ? response.data.sprites.other.dream_world.front_default
-            : "/notfound.png";
-        //Special stats
-        this.currentPokemon.hp = response.data.stats[0].base_stat;
-        this.currentPokemon.attack = response.data.stats[1].base_stat;
-        this.currentPokemon.defense = response.data.stats[2].base_stat;
-        this.currentPokemon.special_attack = response.data.stats[3].base_stat;
-        this.currentPokemon.special_defense = response.data.stats[4].base_stat;
-        this.currentPokemon.speed = response.data.stats[5].base_stat;
-      });
+      api
+        .get(this.url)
+        .then(response => {
+          this.currentPokemon.name = response.data.name;
+          this.currentPokemon.types = response.data.types;
+          this.currentPokemon.id = response.data.id;
+          this.currentPokemon.abilities = response.data.abilities;
+          this.currentPokemon.height = response.data.height / 10;
+          this.currentPokemon.weight = response.data.weight / 10;
+          this.currentPokemon.base_experience = response.data.base_experience;
+          this.currentPokemon.image =
+            response.data.sprites.other.dream_world.front_default != null
+              ? response.data.sprites.other.dream_world.front_default
+              : "/notfound.png";
+          //Special stats
+          this.currentPokemon.hp = response.data.stats[0].base_stat;
+          this.currentPokemon.attack = response.data.stats[1].base_stat;
+          this.currentPokemon.defense = response.data.stats[2].base_stat;
+          this.currentPokemon.special_attack = response.data.stats[3].base_stat;
+          this.currentPokemon.special_defense =
+            response.data.stats[4].base_stat;
+          this.currentPokemon.speed = response.data.stats[5].base_stat;
+        })
+        .catch(() => {
+          this.$q.notify({
+            type: "negative",
+            position: "top",
+            message: `Ops, parece que este não existe..`
+          });
+        });
     }
   }
 };
