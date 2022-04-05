@@ -244,7 +244,7 @@ export default {
 }
 .pokemon__skills-item {
   padding: 7px;
-  font-size: 1.4em;
+  font-size: 1.2rem;
 }
 .pokemon__card-number {
   background-color: #921616;
