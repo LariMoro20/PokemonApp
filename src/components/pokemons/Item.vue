@@ -12,11 +12,7 @@
     </div>
     <q-card-section class="text-center ">
       <div class="col-md-12 items-center justify-center flex">
-        <q-btn
-          label="Detalhes"
-          color="primary"
-          @click="openDialog = !openDialog"
-        />
+        <q-btn label="Detalhes" color="primary" @click="handleOpenDialog" />
       </div>
 
       <q-dialog
@@ -54,8 +50,9 @@
               <div class="row">
                 <div class="col-md-12 full-width">
                   <div class="col-md-12 full-width text-center text-h6">
-                    Detalhes
+                    HP: {{ currentPokemon.hp }}
                   </div>
+
                   <div
                     class="row flex  q-pa-md bg-black text-white flex-center justify-around"
                   >
@@ -84,6 +81,24 @@
                         {{ hability.ability.name }}
                       </span>
                     </div>
+                  </div>
+                  <div
+                    class="row flex pokemon__skills q-pa-sm bg-black text-white flex-center justify-around "
+                  >
+                    <div class="pokemon__skills-item text-capitalize">
+                      Grupo de ovos:
+                      <span
+                        class="pokemon__types-item text-capitalize"
+                        v-for="(egg, ikey) in currentPokemon.egg_groups"
+                        :key="ikey"
+                      >
+                        {{ egg.name }}
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="row flex pokemon__skills q-pa-sm bg-black text-white flex-center justify-around "
+                  >
                     <div class="pokemon__skills-item">
                       Altura: {{ currentPokemon.height }} m
                     </div>
@@ -94,9 +109,6 @@
                   <div
                     class="row flex pokemon__skills q-pa-sm bg-black text-white flex-center justify-between"
                   >
-                    <div class="pokemon__skills-item">
-                      HP: {{ currentPokemon.hp }}
-                    </div>
                     <div class="pokemon__skills-item">
                       Ataque: {{ currentPokemon.attack }}
                     </div>
@@ -159,6 +171,15 @@ export default {
     }
   },
   methods: {
+    async handleOpenDialog() {
+      this.$q.loading.show();
+      this.currentPokemon.species_url
+        ? (await this.getPokeSpecie(this.currentPokemon.species_url),
+          (this.openDialog = !this.openDialog))
+        : "";
+      this.$q.loading.hide();
+    },
+
     getPokeByURL() {
       api
         .get(this.url)
@@ -182,6 +203,8 @@ export default {
           this.currentPokemon.special_defense =
             response.data.stats[4].base_stat;
           this.currentPokemon.speed = response.data.stats[5].base_stat;
+          this.currentPokemon.species_url = response.data.species.url;
+          //this.getPokeSpecie()
         })
         .catch(() => {
           this.$q.notify({
@@ -190,6 +213,14 @@ export default {
             message: `Ops, parece que este não existe..`
           });
         });
+    },
+    async getPokeSpecie(url) {
+      await api.get(url).then(response => {
+        this.currentPokemon.egg_groups = response.data.egg_groups;
+        this.currentPokemon.flavor_text_entries =
+          response.data.flavor_text_entries;
+        console.log(this.currentPokemon);
+      });
     }
   }
 };
@@ -212,8 +243,8 @@ export default {
   background-size: cover;
   top: 50%;
   left: 50%;
-  width: 250px;
-  height: 250px;
+  width: 180px;
+  height: 180px;
   max-width: 100%;
 }
 .pokemon__modal-image::before {
