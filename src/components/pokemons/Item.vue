@@ -222,7 +222,7 @@ export default {
     async getPokeSpecie(url) {
       await api.get(url).then(response => {
         this.currentPokemon.egg_groups = response.data.egg_groups;
-         this.currentPokemon.shape = response.data.shape;
+         this.currentPokemon.shape = response.data.shape || '';
         this.currentPokemon.flavor_text_entries =
           response.data.flavor_text_entries;
       });
