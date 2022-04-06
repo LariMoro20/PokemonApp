@@ -1,6 +1,9 @@
 <template>
   <q-page class="bg-black">
     <Header />
+    <div class="col-12 pokemon__text text-center">
+     
+    </div>
     <div class="row q-pt-md q-pa-lg bg-red-10 full-width flex flex-center">
       <div class="col-md-5 col-10  ">
         <q-input
@@ -9,21 +12,26 @@
           label-color="black"
           borderless
           bg-color="white"
-          rounded outlined 
+          rounded
+          outlined
           v-model="current_id"
           placeholder="Pesquisar o pokemon (digite o nome ou id)"
         >
-         <template v-slot:after>
-         <q-btn
-          label="Procurar"
-          @click="setCurrentPokemon"
-          class="full-height full-width text-black bg-secondary"
-        />
-        </template>
+          <template v-slot:after>
+            <q-btn
+              label="Procurar"
+              @click="setCurrentPokemon"
+              class="full-height full-width text-black bg-secondary"
+            />
+          </template>
         </q-input>
       </div>
-  
     </div>
+<div class="col-12 pokemon__text text-center">
+
+      Esta aplicação utiliza a api <a href="https://pokeapi.co/" target="_blank">https://pokeapi.co/</a>
+    </div>
+    
 
     <div class="container q-pa-lg">
       <div v-if="currentPokemon_url" class="pokemon__search-result q-pa-sm">
@@ -58,9 +66,14 @@
         </div>
       </div>
     </div>
-    <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]" :duration="800">
-            <q-btn fab icon="keyboard_arrow_up" color="primary" />
-          </q-page-scroller>
+    <q-page-scroller
+      position="bottom-right"
+      :scroll-offset="150"
+      :offset="[18, 18]"
+      :duration="800"
+    >
+      <q-btn fab icon="keyboard_arrow_up" color="primary" />
+    </q-page-scroller>
   </q-page>
 </template>
 
@@ -135,7 +148,15 @@ export default {
 .pokemon__search-result {
   background-color: #afafaf54;
 }
-.item__poke{
+.item__poke {
   width: 300px;
+}
+.pokemon__text {
+  background-color: #17244c;
+  color: white;
+  font-size: 10px;
+}
+.pokemon__text a{
+    color: white;
 }
 </style>
