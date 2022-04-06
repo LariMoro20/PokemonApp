@@ -163,6 +163,7 @@ export default {
     currentPokemon: {
       id: "",
       name: "",
+      shape:"",
       id: "",
       type: ""
     }
