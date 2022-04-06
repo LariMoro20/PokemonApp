@@ -5,7 +5,7 @@
      
     </div>
     <div class="row q-pt-md q-pa-lg bg-red-10 full-width flex flex-center">
-      <div class="col-md-5 col-10  ">
+      <div class="col-md-5 col-12  ">
         <q-input
           dense
           color="white"
