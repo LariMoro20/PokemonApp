@@ -103,7 +103,7 @@
                       Altura: {{ currentPokemon.height }} m
                     </div>
                     <div class="pokemon__skills-item">
-                      Peso: {{ currentPokemon.height }} kg
+                      Peso: {{ currentPokemon.weight }} kg
                     </div>
                     <div class="pokemon__skills-item">
                       Forma: {{ currentPokemon.shape.name }}
