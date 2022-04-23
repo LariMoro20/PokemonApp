@@ -14,7 +14,6 @@ Contem:
 - Consumo de API;
 - Gerenciamento de Estado (vuex store);
 - Configuração de arquivos de boot do Quasar.
-- (em desenvolvimento)
 
 ## Instalação
 
