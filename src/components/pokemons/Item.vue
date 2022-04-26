@@ -264,7 +264,7 @@ export default {
   border-radius: 10px;
 }
 .pokemon__types-item-type {
-  font-size: 1.3rem;
+  font-size: 1rem;
   padding: 10px;
   margin: 10px;
   color: black;
@@ -290,7 +290,7 @@ export default {
 }
 .pokemon__skills-item {
   padding: 7px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .pokemon__card-number {
   background-color: #921616;
