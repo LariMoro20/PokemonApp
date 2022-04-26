@@ -71,7 +71,7 @@
                   <div
                     class="row flex pokemon__skills q-pa-sm bg-black text-white flex-center justify-around "
                   >
-                    <div class="pokemon__skills-item text-capitalize">
+                    <div class="col-6 text-center pokemon__skills-item text-capitalize">
                       Habilidade:
                       <span
                         class="pokemon__types-item text-capitalize"
@@ -81,11 +81,7 @@
                         {{ hability.ability.name }}
                       </span>
                     </div>
-                  </div>
-                  <div
-                    class="row flex pokemon__skills q-pa-sm bg-black text-white flex-center justify-around "
-                  >
-                    <div class="pokemon__skills-item text-capitalize">
+                     <div class="col-6 text-center pokemon__skills-item text-capitalize">
                       Grupo de ovos:
                       <span
                         class="pokemon__types-item text-capitalize"
@@ -96,6 +92,7 @@
                       </span>
                     </div>
                   </div>
+                  
                   <div
                     class="row flex pokemon__skills q-pa-sm bg-black text-white flex-center justify-around "
                   >
@@ -108,7 +105,9 @@
                     <div class="pokemon__skills-item">
                       Forma: {{ currentPokemon.shape.name }}
                     </div>
-
+  <div class="pokemon__skills-item">
+                      Velocidade: {{ currentPokemon.speed }}
+                    </div>
                     
                   </div>
                   <div
@@ -126,9 +125,7 @@
                     <div class="pokemon__skills-item">
                       Defesa esp.: {{ currentPokemon.special_defense }}
                     </div>
-                    <div class="pokemon__skills-item">
-                      Velocidade: {{ currentPokemon.speed }}
-                    </div>
+                  
                   </div>
                 </div>
               </div>
