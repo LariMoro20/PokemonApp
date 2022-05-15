@@ -2,12 +2,12 @@
   <q-parallax :height="180" :speed="0.5">
     <template v-slot:media>
       <img
-        src="https://pokedex-larisantos.vercel.app/header-bkg.jpg"
+        src="/images/header-bkg.jpg"
         alt="milky way"
       />
     </template>
     <img
-      src="https://pokedex-larisantos.vercel.app/logo.png"
+      src="/images/logo.png"
       class="pokemon_logotipo"
       alt="pokemon logo"
     />
